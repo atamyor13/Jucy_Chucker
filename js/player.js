@@ -3,12 +3,7 @@ function Player(path){
     const loader = new THREE.FBXLoader();
     loader.load('js/3D/' + path, function (object) {
 
-<<<<<<< Updated upstream
         this.mixer = new THREE.AnimationMixer(object);
-=======
-    this.actualiar = function(){
-        rayCast.setFromCamera(mouse, this.cam);
->>>>>>> Stashed changes
 
         const action = mixer.clipAction(object.animations[0]);
         action.play();
@@ -40,10 +35,4 @@ function Player(path){
         scene.add(object);
     });
 
-<<<<<<< Updated upstream
-=======
-        }
-
-    }
->>>>>>> Stashed changes
 }
