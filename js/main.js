@@ -13,8 +13,10 @@ var obj = [];
 
 const n1 = new Nivel("escenario.fbx");
 
+const ball = new Ball();
 
-camera.position.y = -17;
+camera.position.z = 20;
+camera.position.y = 15;
 
 const animate = function () {
     requestAnimationFrame(animate);

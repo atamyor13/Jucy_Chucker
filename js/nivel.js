@@ -27,9 +27,6 @@ function Nivel(path) {
                     });
                 }
 
-                object.scale.set(0.2, 0.2, 0.2);
-                object.position.y = -20;
-
                 child.material.skinning = true;
 
             }
