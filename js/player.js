@@ -1,17 +1,38 @@
-function Player(miCamera){
+function Player(path){
 
-    this.cam = miCamera;
-    const rayCast = new THREE.Raycaster();
-    const mouse = new THREE.Vetor2();
+    const loader = new THREE.FBXLoader();
+    loader.load('js/3D/' + path, function (object) {
 
-    this.actualiar = funtion(){
-        rayCast.setFromCamera(mouse, this.cam);
+        this.mixer = new THREE.AnimationMixer(object);
 
-        const intersects = rayCast.intersectsObjects(scene.childres, true);
+        const action = mixer.clipAction(object.animations[0]);
+        action.play();
 
-        if(intersects.length > 0){
-            console.log("ssss");
+        object.traverse(function (child) {
 
-        }
-    }
+            if (child.isMesh) {
+
+                child.castShadow = true;
+                child.receiveShadow = true;
+                console.log(child.name);
+
+                if (child.name == "Beta_Surface") {
+                    child.material = new THREE.MeshLambertMaterial({
+                        color: 0xBCC0C0
+                    });
+                }
+
+                object.scale.set(0.2, 0.2, 0.2);
+                object.position.y = -20;
+
+                child.material.skinning = true;
+
+            }
+
+        });
+
+        object.position.x = posX;
+        scene.add(object);
+    });
+
 }
