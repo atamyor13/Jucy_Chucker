@@ -34,6 +34,17 @@ function Nivel(path) {
 
             }
 
+            if(child.name=="piso"){
+
+                child.material=new THREE.MeshPhongMaterial(
+                    {
+                        color: 0xFF8844,
+                        map:loader.load('cancha.png')													
+                    }
+                )
+                child.material.skinning=true;
+                }
+
         });
 
         scene.add(object);
