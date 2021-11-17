@@ -22,6 +22,7 @@ const animate = function () {
     requestAnimationFrame(animate);
 
     //if ( mixer ) mixer.update( 0.015);
+    ball.update();
 
 
     renderer.render(scene, camera);
