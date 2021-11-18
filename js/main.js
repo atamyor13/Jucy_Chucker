@@ -14,7 +14,7 @@ const l = new Ligths();
 
 var obj = [];
 
-const n1 = new Nivel("escenario4.fbx");
+const n1 = new Nivel("escenario5.fbx");
 
 const ball = new Ball();
 
