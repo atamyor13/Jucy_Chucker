@@ -1,6 +1,6 @@
 function Ball() {
 
-    onst loader = new THREE.TextureLoader();
+    const loader = new THREE.TextureLoader();
 
     const sphere = new THREE.SphereGeometry(1, 32, 16);
     const mat = new THREE.MeshPhongMaterial({
