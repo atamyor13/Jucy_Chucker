@@ -1,18 +1,21 @@
-document.addEventListener("onmouseup", myScript);
-document.addEventListener("onmouseup", myScript2);
-var shooting = false;
-function Controls(){
-    this.actualizar = function(){
-        if(shooting){
-            console.log("shoot");
-        }
+document.addEventListener("keydown", onDocumentKeyDown, false);
+
+function Controls(miPlayer) {
+
+    player = miPlayer;
+    
+    this.actualizar = function () {
+        
     }
+
 }
 
-function myScript(){
-    shooting = true;
-}
+function onDocumentKeyDown(event) {
+    var keyCode = event.which;
 
-function myScript2(){
-    shooting = false;
-}
+    //tecla espacio
+    if(keyCode == 32){
+        console.log("shoot ");
+        player.shoot();
+    }
+};

@@ -5,42 +5,41 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+
+//-----------------------------------Extras--------------------------------------------------------
 var effect = new THREE.StereoEffect(renderer);
 effect.setSize(window.innerWidth, window.innerHeight);
 
-const controles = new THREE.DeviceOrientationControls(camera);
-//const controles = new THREE.OrbitControls(camera);
+//const controles = new THREE.DeviceOrientationControls(camera);
+const controles = new THREE.OrbitControls(camera);
 
-
-
-
+//--------------------------------------nivel--------------------------------------------------------
 const l = new Ligths();
-
-var obj = [];
-
 const n1 = new Nivel("escenario5.fbx");
 
-const ball = new Ball(scene, new THREE.Vector3(0, 0, -0.5));
+//--------------------------------------Player--------------------------------------------------------
+const p1 = new Player(camera, scene);
+const ctrl = new Controls(p1);
 
-const p1 = new Player(camera);
+
 
 camera.position.z = 20;
 camera.position.y = 15;
 
- /*//skybox
- cubeLoader.setPath('fondo1/');
- const textureCube = cubeLoader.load([
-     'fondo3.png', 'fondo3.png',
-     'fondo3.png', 'fondo3.png',
-     'fondo3.png', 'fondo3.png'
- ]);
- scene.background = textureCube;*/
+/*//skybox
+cubeLoader.setPath('fondo1/');
+const textureCube = cubeLoader.load([
+    'fondo3.png', 'fondo3.png',
+    'fondo3.png', 'fondo3.png',
+    'fondo3.png', 'fondo3.png'
+]);
+scene.background = textureCube;*/
 
 const animate = function () {
     requestAnimationFrame(animate);
-    if ( mixer ) mixer.update( 0.015);
+    if (mixer) mixer.update(0.015);
 
-    ball.update();
+    p1.update();
 
     controles.update();
     renderer.render(scene, camera);//cambiar renderer por effect

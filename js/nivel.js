@@ -30,7 +30,10 @@ function Nivel(path) {
                 if (child.name == "Postes_luz_pCube22") {
 
                     child.material = new THREE.MeshPhongMaterial({
-                        color: 0xFF8844, emissive: 0xffd500, shininess: 100, opacity: 0.58
+                        color: 0xFF8844, 
+                        emissive: 0xffd500, 
+                        shininess: 100, 
+                        opacity: 0.58
 
                     });
                 }
@@ -38,7 +41,10 @@ function Nivel(path) {
                 if (child.name == "metal_postes") {
 
                     child.material = new THREE.MeshPhongMaterial({
-                        color: 0xFF8844, emissive: 0xffd500, shininess: 100, opacity: 0.58
+                        color: 0xFF8844, 
+                        emissive: 0xffd500, 
+                        shininess: 100, 
+                        opacity: 0.58
 
                     });
                 }
@@ -66,7 +72,9 @@ function Nivel(path) {
                 if (child.name == "boton") {
 
                     child.material = new THREE.MeshPhongMaterial({
-                        color: 0xFF8844, emissive: 0xE907F5, shininess: 100
+                        color: 0xFF8844, 
+                        emissive: 0xE907F5, 
+                        shininess: 100
 
                     });
                 }

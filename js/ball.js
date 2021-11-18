@@ -9,6 +9,11 @@ function Ball(scene, vector) {
         shininess: 20
     });
     const ball = new THREE.Mesh(sphere, mat);
+
+    /*ball.castShadow = true;   
+    ball.receiveShadow = true;*/
+
+
     scene.add(ball);
 
     //---------------------RayCast's----------------------------------
@@ -89,7 +94,7 @@ function Ball(scene, vector) {
                 //vel[1] += 0.1;
             }
         }
-        
+
         //-----------------RayCast Front-------------------------------
         raycaster_front.set(ball.position, dir_front);
         const inter_front = raycaster_front.intersectObjects(scene.children, true);
@@ -99,7 +104,7 @@ function Ball(scene, vector) {
                 //vel[1] += 0.1;
             }
         }
-        
+
         //-----------------RayCast Back-------------------------------
         raycaster_back.set(ball.position, dir_back);
         const inter_back = raycaster_back.intersectObjects(scene.children, true);
@@ -109,6 +114,10 @@ function Ball(scene, vector) {
                 //vel[1] += 0.1;
             }
         }
-        
+
+    }
+
+    this.die = function () {
+        scene.remove(ball);
     }
 }
