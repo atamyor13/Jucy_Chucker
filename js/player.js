@@ -2,15 +2,15 @@ function Player(miCamera){
 
     this.cam = miCamera;
     const rayCast = new THREE.Raycaster();
-    const mouse = new THREE.Vetor2();
+    const mouse = new THREE.Vector2(0, 0);
 
-    this.actualiar = function(){
+    this.update = function(){
         rayCast.setFromCamera(mouse, this.cam);
 
-        const intersects = rayCast.intersectsObjects(scene.childres, true);
+        const intersects = rayCast.intersectObjects(scene.childres, true);
 
         if(intersects.length > 0){
-            console.log("ssss");
+            console.log("sss");
 
         }
     }

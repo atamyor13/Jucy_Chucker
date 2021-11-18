@@ -2,8 +2,6 @@ function Nivel(path) {
     this.contenedor = new THREE.Object3D();
 
 
-    var a = 0.001;
-    var v = 0;
 
     const loader = new THREE.FBXLoader();
     loader.load('js/3D/' + path, function (object) {
