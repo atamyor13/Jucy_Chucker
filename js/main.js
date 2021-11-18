@@ -5,7 +5,11 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-//const controls = new THREE.OrbitControls(camera, renderer.domElement);
+var effect = new THREE.StereoEffect(renderer);
+effect.setSize(window.innerWidth, window.innerHeight);
+
+const controles = new THREE.DeviceOrientationControls(camera);
+//const controles = new THREE.OrbitControls(camera);
 
 
 
@@ -34,12 +38,12 @@ camera.position.y = 15;
 
 const animate = function () {
     requestAnimationFrame(animate);
+    if ( mixer ) mixer.update( 0.015);
 
-        if ( mixer ) mixer.update( 0.015);
+    ball.update();
 
-        ball.update();
-
-    renderer.render(scene, camera);
+    controles.update();
+    renderer.render(scene, camera);//cambiar renderer por effect
 };
 
 animate();
