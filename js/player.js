@@ -2,8 +2,9 @@ function Player(miCamera) {
 
     this.cam = miCamera;
     const rayCast = new THREE.Raycaster();
-    const mouse = new THREE.Vetor2();
+    const mouse = new THREE.Vector2();
 
+    /*
     window.addEventListener('keydown', function (e) {
         keyDownWalk(e);
     });
@@ -39,6 +40,8 @@ function Player(miCamera) {
     let desPosX = eyePosition[0] + Math.sin(eyeRotation), desPosZ = eyePosition[2] + Math.cos(eyeRotation);
     camera.position.set(eyePosition[0] - 1.5 * Math.sin(eyeRotation), eyePosition[1] + 1, eyePosition[2] - 1.5 * Math.cos(eyeRotation));
     camera.lookAt(new THREE.Vector3(desPosX, eyePosition[1], desPosZ));
+    */
+
     this.actualiar = function () {
         rayCast.setFromCamera(mouse, this.cam);
 

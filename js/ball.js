@@ -1,4 +1,4 @@
-function Ball() {
+function Ball(scene, vector) {
 
     const loader = new THREE.TextureLoader();
 

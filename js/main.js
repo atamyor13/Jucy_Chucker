@@ -4,8 +4,8 @@ const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-const controls = new THREE.OrbitControls(camera, renderer.domElement);
-/*const cubeLoader = new THREE.CubeTextureLoader();*/
+
+//const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 
 
@@ -16,7 +16,9 @@ var obj = [];
 
 const n1 = new Nivel("escenario5.fbx");
 
-const ball = new Ball();
+const ball = new Ball(scene, new THREE.Vector3(0, 0, -0.5));
+
+const p1 = new Player(camera);
 
 camera.position.z = 20;
 camera.position.y = 15;
@@ -35,6 +37,7 @@ const animate = function () {
 
         if ( mixer ) mixer.update( 0.015);
 
+        ball.update();
 
     renderer.render(scene, camera);
 };
