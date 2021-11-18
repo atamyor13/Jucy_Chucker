@@ -1,4 +1,4 @@
-function Ball(scene, vector) {
+function Ball(scene, vector, initPos) {
 
     const loader = new THREE.TextureLoader();
 
@@ -43,7 +43,9 @@ function Ball(scene, vector) {
     var acc = new THREE.Vector3(0, -0.01, 0);
     var vel = vector;
 
-    ball.position.set(0, 20, -10);
+    ball.position.x = initPos.x;
+    ball.position.y = initPos.y;
+    ball.position.z = initPos.z;
 
 
     this.update = function () {
