@@ -1,14 +1,14 @@
 function Ligths() {
 
-    const lightP1 = new THREE.PointLight(0xffffff, 1.5, 0);
-    lightP1.position.set(0, 30, 0);
+    const lightP1 = new THREE.PointLight(0xF57A6E, 1, 0);
+    lightP1.position.set(90, 50, 0);
 
-    const lightP2 = new THREE.PointLight(0xffffff, 1.5, 0);
-    lightP2.position.set(0, 30, 50);
+    const lightP2 = new THREE.PointLight(0xF5C2BF, 1, 0);
+    lightP2.position.set(-90, 50, 50);
 
     scene.add(
         lightP1,
-        lightP2
+        lightP2,
     );
 
     lightP1.castShadow = true;
@@ -19,7 +19,7 @@ function Ligths() {
 
     scene.add(
         pointLightHelper1,
-        pointLightHelper2
+        pointLightHelper2,
     );
 
 }
